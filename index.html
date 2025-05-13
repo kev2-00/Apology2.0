@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ForgiveMeMarie</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="#home">HOME</a>
+      <a href="#letter">LETTER</a>
+      <a href="#promise">PROMISE</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <h1>Marie, I'm Sorry</h1>
+      <p>I built this page as a canvas for my apology—every pixel a petal of regret, hurting, disappointment and every
+        gradient represendting a sunrise of renewed
+        intention and change for the the better.</p>
+      <button id="read-letter">Read My Letter To You</button>
+    </section>
+
+    <section id="letter">
+      <h2>A Letter to Marie</h2>
+      <article>
+        <p>My dearest Marie,</p>
+        <p>There are mistakes that echo louder than a heartbeat, and mine has been thundering for days. I hurt you, and
+          in doing so I bruised the best part of my own soul. I am sorry—fully, fiercely, and without excuses.</p>
+        <p>There are some mistakes that change us, that remind us of what truly matters. When I hurt you, I hurt myself
+          too, because you've become the best part of my heart.
+
+          I know words can't undo what happened, but I hope they can begin to heal. I've spent days replaying our
+          argument, wishing I could take back what I said, how I acted. The look on your face stays with me—a reminder
+          of how careless I was with someone so precious.
+
+          I was wrong. I was defensive when I should have listened. I owe you an apology, one that is quieter and from
+          the gentlest part of me
+          I am truly sorry for speaking to your mom about us. It wasn't fair to you, our relationship was something
+          sacred, something between you and I
+          and I had no right to share piece of it without your blessings. No matter what my intentions were, I should
+          have respected your wish, your privacy
+          and your heart
+          And even now as I type this, I am sorry again for bringing it up once more. I know this might open moments
+          that was already hard enough, But if I could
+          go back and undo it, I would, A thousand times over. I just did not want to leave wrong hanging in the air
+          like an unfinished sentence between us.
+          Please Marie.....If there's still a quiet corner in your heart where you can find a position to forgive me. I
+          hope this finds its was there. I am not asking to
+          rewrite the past. Just hoping to soften the edge of it. You deserve peace, love and respect even from my own
+          mistakes. I'll keep on learning, growing
+          and keep on loving you Marie. Thank you, even just for reading this.
+          Your's absolute Love
+        </p>
+        <p>—Kelvin</p>
+      </article>
+    </section>
+
+    
+  </main>
+
+  <footer>
+    <p>Made with ♥ by Kelvin — 2025</p>
+  </footer>
+
+  <script>
+    // Smooth scroll to letter
+    document.getElementById('read-letter').addEventListener('click', function () {
+      document.getElementById('letter').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Floating hearts
+    const colors = ['#ff5f96', '#ffb6c1', '#ffd1dc'];
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.textContent = '❤';
+      const size = Math.random() * 1.5 + 0.5 + 'rem';
+      heart.style.fontSize = size;
+      heart.style.position = 'fixed';
+      heart.style.zIndex = 9999;
+      heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.top = '110vh';
+      document.body.appendChild(heart);
+
+      const animation = heart.animate([
+        { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+        { transform: 'translateY(-120vh) rotate(360deg)', opacity: 0 }
+      ], {
+        duration: 8000 + Math.random() * 4000,
+        easing: 'ease-out'
+      });
+
+      animation.onfinish = () => heart.remove();
+    }
+
+    setInterval(createHeart, 600);
+  </script>
+</body>
+
+</html>
